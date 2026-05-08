@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="clinton">
+    <meta name="description" content="Dashboard">
+    <link rel="stylesheet" href="index.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">FinTrack</div>
+        <div class="nav-actions">
+            <button id="themeToggle">🌙</button>
+        </div>
+    </header>
+
+
+    <main class="dashboard">
+        <section class="summary">
+            <div class="card">
+                <p class="card-title">Total Balance</p> 
+                <h3 class="card-value" id="totalBalance"></h3>
+            </div>
+
+            <div class="card">
+                <p class="card-title">Change</p> 
+                <h3 class="card-value" id="totalPercentChange"></h3>
+            </div>
+
+            <div class="card">
+                <p class="card-title">Assets</p> 
+                <h3 class="card-value" id="totalAssets"></h3>
+            </div>
+        </section>
+
+
+
+        <section class="chart-section section">
+            <h2>Portfolio Chart</h2>
+            <div class="chart-box" id="chartBox">
+                <canvas id="portfolioChart"></canvas>
+            </div>
+        </section>
+
+
+
+        <section class="assets-section section">
+            <h2>Assets</h2>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                        <th>Asset</th>
+                        <th>Price</th>
+                        <th>Holdings</th>
+                        <th>Value</th>
+                        <th>Change</th>
+                        <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="assetTableBody">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+
+
+        <section class="add-asset section">
+            <h2>Add Asset</h2>
+
+            <div class="search-container">
+                <input type="text" placeholder="Search coin..." id="symbolInput">
+                <div id="searchResults" class="search-dropdown"></div>
+            </div>
+
+            <input type="number" placeholder="Amount" id="amountInput">
+            <button id="addBtn">Add</button>
+
+            
+        </section>
+    </main>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="index.js"></script>
+</html>
